@@ -43,20 +43,16 @@ public class AnyNumberOfPlayers {
 					break;
 				}
 				
-				for(int snakePos : snakePositions) {
-					if(list.get(i).getCurPos() == snakePos) {
-						list.get(i).setCurPos(list.get(i).getCurPos() - mapForSnake.get(snakePos));
-						System.out.println("Player" + (i + 1) + " position after snake : " + list.get(i).getCurPos());
-						break;
-					}
+				if (snakePositions.contains(list.get(i).getCurPos())) {
+					list.get(i).setCurPos(list.get(i).getCurPos() - mapForSnake.get(list.get(i).getCurPos()));
+					System.out.println("Player" + (i + 1) + " position after snake : " + list.get(i).getCurPos());
+					break;
 				}
 				
-				for(int ladderPos : ladderPositions) {
-					if(list.get(i).getCurPos() == ladderPos) {
-						list.get(i).setCurPos(list.get(i).getCurPos() + mapForLadder.get(ladderPos));
-						System.out.println("Player" + (i + 1) + " position after ladder : " + list.get(i).getCurPos());
-						break;
-					}
+				if (ladderPositions.contains(list.get(i).getCurPos())) {
+					list.get(i).setCurPos(list.get(i).getCurPos() + mapForLadder.get(list.get(i).getCurPos()));
+					System.out.println("Player" + (i + 1) + " position after snake : " + list.get(i).getCurPos());
+					break;
 				}
 			}
 			if(winnerFound) break;
