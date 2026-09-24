@@ -68,6 +68,7 @@ public class AnyNumberOfPlayers {
 					endPosition = list.get(i).getCurPos();
 				}
 			}
+			
 		}
 	}
 }
