@@ -61,6 +61,7 @@ public class AnyNumberOfPlayers {
 					System.out.println("Player" + (i + 1) + " position after ladder : " + list.get(i).getCurPos());
 				}
 			}
+			
 			if(winnerFound) break;
 			for(int i = 0; i < list.size(); i++) {
 				if(list.get(i).getCurPos() > endPosition) {
